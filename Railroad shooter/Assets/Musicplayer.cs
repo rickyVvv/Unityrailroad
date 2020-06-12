@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Musicplayer : MonoBehaviour
 {
+    private void Awake(){
+        DontDestroyOnLoad(gameObject);
+    }
+    // awake is a message that gets called right before start theres a whole 
+    //flow chart
     // Start is called before the first frame update
     void Start(){
         Invoke("LoadFirstScene", 2f);
