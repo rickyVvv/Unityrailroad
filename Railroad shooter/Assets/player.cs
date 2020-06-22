@@ -8,9 +8,9 @@ public class player : MonoBehaviour
     [Tooltip("In m")] [SerializeField] float xRange=8f;
     [Tooltip("In m")] [SerializeField] float yRange=5f;
     [SerializeField] float positionPitchFactor = -3f;
-    [SerializeField] float controlPitchFactor = -20f;
+    [SerializeField] float controlPitchFactor = -5f;
     [SerializeField] float positionYawFactor = 3f;
-    [SerializeField] float controlRollFactor = -20f;
+    [SerializeField] float controlRollFactor = -3;
 
     float xThrow,yThrow;
     // Start is called before the first frame update
@@ -42,8 +42,8 @@ public class player : MonoBehaviour
         float xThrow = Input.GetAxis("Horizontal");
         float yThrow = Input.GetAxis("Vertical");
 
-        float xOffset = xThrow * Speed * Time.deltaTime;
-        float yOffset = yThrow *  Speed * Time.deltaTime;
+        float xOffset = xThrow * Speed ;
+        float yOffset = yThrow *  Speed ;
 
         float xPos = transform.localPosition.x + xOffset;
         float yPos = transform.localPosition.y + yOffset;
